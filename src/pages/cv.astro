@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TimeLineElement from '../components/cv/TimeLine.astro'
+import SkillCard from '../components/SkillCard.astro'
+
+const skills = [
+  'typescript',
+  'javascript',
+  'react',
+  'zustand',
+  'redux',
+  'redux toolkit',
+  'next js',
+  'astro',
+  'css',
+  'tailwind',
+  'sass',
+  'chakra-iu',
+  'node js',
+  'express',
+  'Nest js',
+  'mongodb',
+  'postgreSQL',
+  'sequelize',
+  'mongoose',
+  'Type ORM',
+  'prisma',
+]
+---
+
+<BaseLayout title='Resume'>
+  <div class='mb-5'>
+    <div class='text-3xl w-full font-bold'>Profile</div>
+  </div>
+
+  <div class='mb-10 flex flex-col items-start gap-3 text-justify'>
+    <p class='leading-6 font-light'>
+      ¡Hola! Soy Ivan Bongiovanni, un desarrollador full stack con experiencia en equipo 🤝 usando
+      Scrum.
+    </p>
+
+    <p class='leading-6 font-light'>
+      Mi objetivo como desarrollador es seguir mejorando mis habilidades tanto técnicas como
+      blandas, y formar parte de un equipo laboral con las mismas expectativas o aún mejores. Estoy
+      siempre dispuesto a aprender y capacitarme en nuevas tecnologías.
+    </p>
+
+    <p class='leading-6 font-light'>
+      Además, me encuentro actualmente en proceso de aprendizaje del inglés para poder crecer aún
+      más como desarrollador. Si está buscando un desarrollador Full Stack con habilidades sólidas
+      en diversas tecnologías, comprometido con el trabajo en equipo y la mejora continua, estoy
+      seguro de que sería una excelente incorporación a su equipo.
+    </p>
+  </div>
+
+  <div class='mb-5'>
+    <div class='text-3xl w-full font-bold'>Experiencia</div>
+  </div>
+
+  <div class='time-line-container mb-10'>
+    <TimeLineElement
+      title='Front End Developer'
+      subtitle='Desde 05/23 hasta 06/23 en Bardahl Bolivia, Remoto, Bolivia'
+      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    />
+    <TimeLineElement
+      title='Front End Developer'
+      subtitle='Desde 03/23 hasta 05/23 en El Krustaceo, Tucumán, Argentina'
+      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    />
+  </div>
+
+  <div class='mb-5'>
+    <div class='text-3xl w-full font-bold'>Proyectos</div>
+  </div>
+
+  <div class='time-line-container mb-10'>
+    <TimeLineElement
+      title='Front End Developer'
+      subtitle='Desde 05/23 hasta 06/23 en Bardahl Bolivia, Remoto, Bolivia'
+      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    />
+    <TimeLineElement
+      title='Front End Developer'
+      subtitle='Desde 03/23 hasta 05/23 en El Krustaceo, Tucumán, Argentina'
+      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    />
+    <TimeLineElement
+      title='Full Stack Developer'
+      subtitle='En Tech Ecommerce, Remoto, Argentina'
+      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    />
+  </div>
+
+  <div class='mb-5'>
+    <div class='text-3xl w-full font-bold'>Certifications</div>
+  </div>
+
+  <ul class='list-disc mx-6 mb-10 grid gap-2'>
+    <li>
+      <a
+        href='https://certificates.soyhenry.com/cert?id=a2226156-bb27-4ecf-9b39-5630c09d47c0'
+        target='_blank'
+      >
+        Full Stack Developer (Soy Henry)</a
+      >
+    </li>
+  </ul>
+
+  <div class='mb-5'>
+    <div class='text-3xl w-full font-bold'>Skills</div>
+  </div>
+
+  <ul class='flex flex-wrap items-center gap-4 pb-5'>
+    {skills.map((skill) => <SkillCard skill={skill} />)}
+  </ul>
+
+  <div class='mb-5'>
+    <div class='text-3xl w-full font-bold'>Education</div>
+  </div>
+
+  <div class='time-line-container grid gap-4 mb-10'>
+    <TimeLineElement
+      title='Programador Universitario'
+      subtitle='2022 en progreso, Universidad Nacional de Tucuman, Tucumán, Argentina'
+    />
+    <TimeLineElement
+      title='Full Stack Developer'
+      subtitle='2022 graduado en 2023, Soy Henry Bootcamp, Remoto, Argentina'
+    />
+    <TimeLineElement
+      title='Perito Mercantil'
+      subtitle='2016 graduado en 2022, Secundario Ballesteros, Tucumán Lules, Argentina'
+    />
+  </div>
+</BaseLayout>

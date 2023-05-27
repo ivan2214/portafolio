@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+import HorizontalCard from '../components/HorizontalCard.astro'
+import { getCollection } from 'astro:content'
+import SelectorTheme from '@comp/SelectorTheme.astro'
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b?.data?.pubDate.valueOf() - a?.data?.pubDate?.valueOf(),
+)
+
+const last_posts = posts.slice(0, 3)
+---
+
+<BaseLayout>
+  <div class='w-full hidden justify-end lg:flex'>
+    <SelectorTheme />
+  </div>
+  <div class='pb-12 mt-5'>
+    <div class='text-xl py-1'>Hola 👋</div>
+    <div class='text-5xl font-bold'>Soy Ivan Bongiovanni</div>
+    <div class='text-3xl py-3 font-bold'>Desarrollador Full Stack</div>
+    <div class='py-2'>
+      <text class='text-lg'>
+        Me apasiona el desarrollo de software y el trabajo en equipo, y estoy comprometido con la
+        mejora continua. Soy una persona que busca mejorar constantemente, con habilidades para el
+        trabajo en equipo y capacidad de aprendizaje rápido.
+      </text>
+    </div>
+    <div class='flex gap-5 pt-8'>
+      <a
+        class='btn hover:btn-outline'
+        href='https://www.linkedin.com/in/bongiovanni-ivan45/'
+        target='_blank'>Conectemos</a
+      >
+      <a href='https://github.com/ivan2214' target='_blank' class='btn btn-outline ml-5'>
+        Mi GitHub</a
+      >
+    </div>
+  </div>
+
+  <div>
+    <div class='text-3xl w-full font-bold mb-2'>Ultimos proyetos {'</>'}</div>
+  </div>
+
+  <HorizontalCard
+    title='Landing Page Bardahl Bolivia'
+    img='/projects/bardahl.png'
+    desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    url='https://bardahl.vercel.app/'
+    badge='NEW'
+  />
+  <div class='divider my-0'></div>
+  <HorizontalCard
+    title='Landing Page WebGenius'
+    img='/projects/web-genius.png'
+    desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    url='https://web-genius.vercel.app/'
+  />
+  <div class='divider my-0'></div>
+  <HorizontalCard
+    title='El-Krusta mini-ecommerce'
+    img='/projects/krusta.png'
+    desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    url='https://el-krusta.vercel.app/'
+    gitHub='https://github.com/ivan2214/el-krusta'
+    badge='FOSS'
+  />
+
+  <div>
+    <div class='text-3xl w-full font-bold mb-5 mt-10'>Latest from blog</div>
+  </div>
+
+  {
+    last_posts.map((post) => (
+      <HorizontalCard
+        title={post.data.title}
+        img={post.data.heroImage}
+        desc={post.data.description}
+        url={'/blog/' + post.slug}
+        target='_self'
+        badge={post.data.badge}
+      />
+    ))
+  }
+</BaseLayout>
