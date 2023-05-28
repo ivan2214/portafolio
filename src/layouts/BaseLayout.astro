@@ -18,6 +18,17 @@ const {
 <!DOCTYPE html>
 <html lang='es' data-theme='mytheme'>
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=G-EQY2H9FH19'></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'G-EQY2H9FH19')
+    </script>
     <BaseHead title={title} description={description} image={image} />
   </head>
   <body>
