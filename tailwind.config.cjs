@@ -16,6 +16,27 @@ module.exports = {
     prefix: '',
     darkTheme: 'dark',
     themes: [
+      {
+        mytheme: {
+          primary: '#22d3ee',
+
+          secondary: '#f3f4f6',
+
+          accent: '#374151',
+
+          neutral: '#191D24',
+
+          'base-100': '#2A303C',
+
+          info: '#06b6d4',
+
+          success: '#36D399',
+
+          warning: '#FBBD23',
+
+          error: '#F87272',
+        },
+      },
       'light',
       'dark',
       'cupcake',

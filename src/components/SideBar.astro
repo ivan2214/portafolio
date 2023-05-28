@@ -34,7 +34,6 @@ import LinkedinIcon from './LinkedinIcon.astro'
       <li><a id='home' href='/'>Inicio</a></li>
       <li><a id='projects' href='/projects'>Proyectos</a></li>
       <li><a id='services' href='/services'>Servicios</a></li>
-      <li><a id='blog' href='/blog/'>Blog</a></li>
       <li><a id='cv' href='/cv'>CV</a></li>
       <li><a href='mailto:bongiovanniivan12@gmail.com'>Contactame</a></li>
     </ul>
@@ -73,14 +72,13 @@ import LinkedinIcon from './LinkedinIcon.astro'
   const homeLink = document.getElementById('home')
   const projectsLink = document.getElementById('projects')
   const servicesLink = document.getElementById('services')
-  const blogLink = document.getElementById('blog')
   const cvLink = document.getElementById('cv')
 
   var isHome = true
 
   const url = window.location.href
 
-  const pages = [projectsLink, servicesLink, blogLink, cvLink]
+  const pages = [projectsLink, servicesLink, cvLink]
 
   const activeClass = 'bg-base-300' // For primary color replace with `active` class
 
