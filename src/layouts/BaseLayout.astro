@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro'
 import SideBar from '../components/SideBar.astro'
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
+import SelectorTheme from '@comp/SelectorTheme.astro'
 
 const {
   image,
@@ -15,7 +16,7 @@ const {
 ---
 
 <!DOCTYPE html>
-<html lang="es" data-theme="mytheme">
+<html lang='es' data-theme='mytheme'>
   <head>
     <BaseHead title={title} description={description} image={image} />
   </head>
@@ -23,6 +24,9 @@ const {
     <div class='bg-base-100 drawer drawer-mobile'>
       <input id='my-drawer' type='checkbox' class='drawer-toggle' />
       <div class='drawer-content flex flex-col bg-base-100'>
+        <div class='w-full hidden lg:sticky lg:top-0 justify-end lg:flex lg:p-5'>
+          <SelectorTheme />
+        </div>
         <Header title={SITE_TITLE} />
         <div class='md:flex md:justify-center'>
           <main class='p-6 pt-10 max-w-[900px]'>

@@ -11,7 +11,7 @@ import RedIcon from './RedIcon.astro'
       {
         img && (
           <Image
-            src={img}
+            src={img || 'https://via.placeholder.com/300x300?text='}
             aspectRatio='16:9'
             width={750}
             format='webp'
@@ -33,12 +33,12 @@ import RedIcon from './RedIcon.astro'
           (url || gitHub) && (
             <div class='mt-5 w-10 h-10 flex items-center justify-between gap-4'>
               {gitHub && (
-                <a target="_blank" href={gitHub} class='btn cursor-pointer btn-outline btn-circle'>
+                <a target='_blank' href={gitHub} class='btn cursor-pointer btn-outline btn-circle'>
                   <GitHubIcon className='w-9 h-9  lg:w-10 lg:h-10' />
                 </a>
               )}
               {url && (
-                <a target="_blank" href={url} class='btn cursor-pointer btn-outline btn-circle'>
+                <a target='_blank' href={url} class='btn cursor-pointer btn-outline btn-circle'>
                   <RedIcon className='w-9 h-9  lg:w-10 lg:h-10' />
                 </a>
               )}

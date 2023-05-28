@@ -1,40 +1,68 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
+import BaseLayout from '../layouts/BaseLayout.astro'
+import HorizontalCard from '../components/HorizontalCard.astro'
+import Service from '@comp/Service.astro'
 ---
 
-<BaseLayout title="Projects">
+<BaseLayout title='Projects'>
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Services Header</div>
+    <div class='text-3xl w-full font-bold mb-5'>Servicios que ofrezco</div>
   </div>
 
-  <HorizontalCard
-    title="Service 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    badge="NEW"
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Service 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Service 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Service 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
+  <section class='flex flex-wrap flex-row gap-8'>
+    <Service
+      title='Creación de sitios web'
+      description='Diseñamos y desarrollamos sitios web a medida que se adaptan a tus necesidades y objetivos comerciales.'
+      img='/icons/code.svg'
+    />
+
+    <div class='divider my-0'></div>
+    <Service
+      title='Responsive Design'
+      description='Creamos sitios web que se adaptan y funcionan de manera óptima en dispositivos móviles, tablets y computadoras de escritorio.'
+      img='/icons/mobile.svg'
+    />
+
+    <div class='divider my-0'></div>
+    <Service
+      title='Optimización de rendimiento'
+      description='Mejoramos la velocidad de carga y rendimiento de tu sitio web para garantizar una experiencia fluida y rápida.'
+      img='/icons/settings-code.svg'
+    />
+
+    <div class='divider my-0'></div>
+    <Service
+      title='SEO (Optimización para motores de búsqueda)'
+      description='Implementamos estrategias de SEO para mejorar la visibilidad de tu sitio web en los motores de búsqueda y aumentar el tráfico orgánico.'
+      img='/icons/seo.svg'
+    />
+
+    <div class='divider my-0'></div>
+    <Service
+      title='Diseño personalizado'
+      description='Creamos diseños atractivos y personalizados que reflejan la identidad de tu marca y generan una excelente impresión visual.'
+      img='/icons/brush.svg'
+    />
+
+    <div class='divider my-0'></div>
+    <Service
+      title='Carga de contenidos'
+      description='Gestionamos y organizamos el contenido de tu sitio web de manera eficiente para una navegación intuitiva y una presentación efectiva.'
+      img='/icons/file-upload.svg'
+    />
+
+    <div class='divider my-0'></div>
+    <Service
+      title='Integración de herramientas y funcionalidades'
+      description='Incorporamos herramientas y funciones especiales, como formularios de contacto, integración de redes sociales, integración de sistemas de pago, entre otras, para potenciar la interacción con tus visitantes.'
+      img='/icons/tools.svg'
+    />
+
+    <div class='divider my-0'></div>
+    <Service
+      title='Mantenimiento y actualizaciones'
+      description='Ofrecemos servicios de mantenimiento continuo y actualizaciones para garantizar que tu sitio web esté siempre actualizado y funcionando de manera óptima.'
+      img='/icons/update.svg'
+    />
+  </section>
 </BaseLayout>
