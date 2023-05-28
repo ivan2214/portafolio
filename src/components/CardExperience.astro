@@ -1,0 +1,26 @@
+---
+interface Props {
+  puesto: string
+  subtitle: string
+  descripcion: string[]
+  empresa?: string
+}
+const { empresa, puesto, subtitle, descripcion } = Astro.props
+---
+
+<div class='flex'>
+  <div class='education__time'>
+    <span class='w-4 h-4 bg-primary block rounded-full mt-1'></span>
+    <span class='education__line bg-primary block h-full w-[2px] translate-x-[7px]'></span>
+  </div>
+  <div class='experience__data bd-grid px-5 mb-5'>
+    <h2 class='font-bold text-lg mb-1'>
+      {puesto}
+      {empresa && <span class='font-semibold text-base'>{empresa}</span>}
+    </h2>
+    <span class='font-light text-sm'>{subtitle}</span>
+    <ul class='my-2 pl-5 flex flex-col items-start gap-2 text-left lg:text-justify'>
+      {descripcion?.map((des) => <li class='list-disc list-item leading-7'>{des}</li>)}
+    </ul>
+  </div>
+</div>

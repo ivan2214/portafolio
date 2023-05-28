@@ -2,6 +2,79 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TimeLineElement from '../components/cv/TimeLine.astro'
 import SkillCard from '../components/SkillCard.astro'
+import CardExperience from '@comp/CardExperience.astro'
+
+const experience = [
+  {
+    empresa: 'Bardahl Bolivia, Bolivia',
+    puesto: 'Front End Developer',
+    subtitle: 'Desde 05/23 hasta 06/23 en Bardahl Bolivia, Remoto, Bolivia',
+    descripcion: [
+      'Implementé el diseño para una landing page en Astro.',
+      'Desarrollé una landing page informativa.',
+      'Realicé optimización y SEO.',
+      'Trabajé en conjunto de Astro y Svelte.',
+      'Aplicación de componentización.',
+      'Seguí buenas prácticas de desarrollo.',
+    ],
+  },
+  {
+    empresa: 'El-Krusta, Tucumán',
+    puesto: 'Front End Developer',
+    subtitle: 'Desde 03/23 hasta 05/23 en El-Krusta, Tucumán, Argentina',
+    descripcion: [
+      'Implementé una solución para tomar pedidos a través de WhatsApp.',
+      'Desarrollé una página web con funcionalidades de carrito de compras y lista de favoritos.',
+      'Integré la opción de continuar la compra a través de WhatsApp para una atención más personalizada.',
+      'Creé un panel de administración para permitir la carga de productos de manera sencilla.',
+    ],
+  },
+]
+
+const projects = [
+  {
+    empresa: 'Airbnb Clone',
+    puesto: 'Full Stack Developer',
+    subtitle: 'Desde 03/23 hasta 04/23 en Remoto',
+    descripcion: [
+      'Registro de usuarios: Los usuarios pueden crear una cuenta para acceder a todas las funciones y servicios de la plataforma.',
+      'Búsqueda de alojamientos: Permite a los usuarios buscar alojamientos según la ubicación, fechas, número de huéspedes y otros filtros relevantes.',
+      'Visualización de listados: Muestra los resultados de búsqueda con detalles de los alojamientos, incluyendo imágenes, descripciones, precios y calificaciones.',
+      'Reservas y solicitud de reserva: Los usuarios pueden realizar reservas de alojamientos seleccionados enviando una solicitud al anfitrión.',
+      'Calendario de disponibilidad: Permite a los anfitriones gestionar las fechas de disponibilidad de sus alojamientos y bloquear períodos no disponibles.',
+      'Interfaz intuitiva y atractiva: Diseñé una interfaz amigable y atractiva para mejorar la experiencia de los usuarios al navegar por la plataforma.',
+    ],
+  },
+  {
+    empresa: 'Tech Ecommerce',
+    puesto: 'Full Stack Developer',
+    subtitle: 'Desde 02/23 hasta 03/23, Tucuman',
+    descripcion: [
+      'Desarrollo del Back End utilizando Strapi.',
+      'Creación de la interfaz de usuario (UI) en el Front End utilizando TailwindCSS.',
+      'Implementación de animaciones utilizando Framer Motion.',
+      'ReduxToolkit como estado global y Redux Persist para guardar datos en el almacenamiento local y evitar peticiones innecesarias.',
+      'Notificaciones utilizando React Hoot Toast para agregar, eliminar, aumentar o reducir productos del carrito.',
+      'Búsqueda, ordenamiento y filtros para una mejor experiencia de usuario en la página web.',
+    ],
+  },
+  {
+    empresa: 'Candy Shop',
+    puesto: 'Full Stack Developer',
+    subtitle: 'Desde 11/22 hasta 01/23 en Candy Shop, Remoto',
+    descripcion: [
+      'Desarrollo del Back End utilizando Express y PostgreSQL.',
+      'Trabajo en equipo usando SCRUM.',
+      'Sprints de 1 semana.',
+      'Autenticación y autorización de usuarios.',
+      'Creación de la interfaz de usuario (UI) en el Front End utilizando React con Chakra UI.',
+      'Implementación de animaciones utilizando Framer Motion.',
+      'Redux como estado global y Local Storage para guardar datos en el almacenamiento local y evitar peticiones innecesarias.',
+      'Búsqueda, ordenamiento y filtros para una mejor experiencia de usuario en la página web.',
+      'Carrito de compras, favoritos, panel de administrador.',
+    ],
+  },
+]
 
 const skills = [
   'typescript',
@@ -34,18 +107,18 @@ const skills = [
   </div>
 
   <div class='mb-10 flex flex-col items-start gap-3 text-justify'>
-    <p class='leading-6 font-light'>
+    <p class='leading-8 font-light'>
       ¡Hola! Soy Ivan Bongiovanni, un desarrollador full stack con experiencia en equipo 🤝 usando
       Scrum.
     </p>
 
-    <p class='leading-6 font-light'>
+    <p class='leading-8 font-light'>
       Mi objetivo como desarrollador es seguir mejorando mis habilidades tanto técnicas como
       blandas, y formar parte de un equipo laboral con las mismas expectativas o aún mejores. Estoy
       siempre dispuesto a aprender y capacitarme en nuevas tecnologías.
     </p>
 
-    <p class='leading-6 font-light'>
+    <p class='leading-8 font-light'>
       Además, me encuentro actualmente en proceso de aprendizaje del inglés para poder crecer aún
       más como desarrollador. Si está buscando un desarrollador Full Stack con habilidades sólidas
       en diversas tecnologías, comprometido con el trabajo en equipo y la mejora continua, estoy
@@ -58,16 +131,11 @@ const skills = [
   </div>
 
   <div class='time-line-container mb-10'>
-    <TimeLineElement
-      title='Front End Developer'
-      subtitle='Desde 05/23 hasta 06/23 en Bardahl Bolivia, Remoto, Bolivia'
-      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
-    />
-    <TimeLineElement
-      title='Front End Developer'
-      subtitle='Desde 03/23 hasta 05/23 en El Krustaceo, Tucumán, Argentina'
-      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
-    />
+    {
+      experience.map((exp) => (
+        <CardExperience puesto={exp.puesto} subtitle={exp.subtitle} descripcion={exp.descripcion} />
+      ))
+    }
   </div>
 
   <div class='mb-5'>
@@ -75,21 +143,16 @@ const skills = [
   </div>
 
   <div class='time-line-container mb-10'>
-    <TimeLineElement
-      title='Front End Developer'
-      subtitle='Desde 05/23 hasta 06/23 en Bardahl Bolivia, Remoto, Bolivia'
-      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
-    />
-    <TimeLineElement
-      title='Front End Developer'
-      subtitle='Desde 03/23 hasta 05/23 en El Krustaceo, Tucumán, Argentina'
-      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
-    />
-    <TimeLineElement
-      title='Full Stack Developer'
-      subtitle='En Tech Ecommerce, Remoto, Argentina'
-      desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
-    />
+    {
+      projects.map((project) => (
+        <CardExperience
+          empresa={project?.empresa}
+          puesto={project?.puesto}
+          subtitle={project?.subtitle}
+          descripcion={project?.descripcion}
+        />
+      ))
+    }
   </div>
 
   <div class='mb-5'>
