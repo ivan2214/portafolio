@@ -36,14 +36,14 @@ const themes = [
 ]
 ---
 
-<div title='Change Theme' class='dropdown dropdown-end lg:border lg:rounded-full lg:border-secondary' id='theme-selector'>
-  <div tabindex='0' class='btn gap-1 normal-case btn-ghost'>
+<div title='Change Theme' class='dropdown dropdown-end lg:border lg:rounded-full lg:border-secondary z-50 ' id='theme-selector'>
+  <div tabindex='0' class='btn gap-1 normal-case btn-ghost z-50'>
     <ThemeIcon />
-    <span class='hidden md:inline'>Theme</span>
+    <span class='hidden md:inline z-50'>Theme</span>
     <ArrowDownIcon />
   </div>
   <div
-    class='dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-52 overflow-y-auto shadow-2xl mt-16'
+    class='dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-52 overflow-y-auto shadow-2xl mt-16 z-50 '
   >
     <div class='grid grid-cols-1 gap-3 p-3' tabindex='0'>
       {themes.map((theme) => <ThemeCard theme={theme} />)}

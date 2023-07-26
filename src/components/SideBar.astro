@@ -33,9 +33,8 @@ import LinkedinIcon from './LinkedinIcon.astro'
       <!-- Sidebar content here -->
       <li><a id='home' href='/'>Inicio</a></li>
       <li><a id='projects' href='/projects'>Proyectos</a></li>
-      <li><a id='services' href='/services'>Servicios</a></li>
       <li><a id='cv' href='/cv'>CV</a></li>
-      <li><a href='mailto:bongiovanniivan12@gmail.com'>Contactame</a></li>
+      <li><a class='btn' href='mailto:bongiovanniivan12@gmail.com'>Contactame</a></li>
     </ul>
     <div class='social-icons px-4 my-2 flex self-center'>
       <a
@@ -71,14 +70,13 @@ import LinkedinIcon from './LinkedinIcon.astro'
 <script>
   const homeLink = document.getElementById('home')
   const projectsLink = document.getElementById('projects')
-  const servicesLink = document.getElementById('services')
   const cvLink = document.getElementById('cv')
 
   var isHome = true
 
   const url = window.location.href
 
-  const pages = [projectsLink, servicesLink, cvLink]
+  const pages = [projectsLink, cvLink]
 
   const activeClass = 'bg-base-300' // For primary color replace with `active` class
 

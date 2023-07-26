@@ -1,7 +1,7 @@
 ---
 interface Props {
   puesto: string
-  subtitle: string
+  subtitle?: string
   descripcion: string[]
   empresa?: string
 }
@@ -18,9 +18,13 @@ const { empresa, puesto, subtitle, descripcion } = Astro.props
       {puesto}
       {empresa && <span class='font-semibold text-base'>{empresa}</span>}
     </h2>
-    <span class='font-light text-sm'>{subtitle}</span>
+    {subtitle && <span class='font-light text-sm'>{subtitle}</span>}
     <ul class='my-2 pl-5 flex flex-col items-start gap-2 text-left lg:text-justify'>
-      {descripcion?.map((des) => <li class='list-disc list-item leading-7'>{des}</li>)}
+      {
+        descripcion?.map((des) => (
+          <li class='list-disc font-extralight text-gray-400 list-item leading-7'>{des}</li>
+        ))
+      }
     </ul>
   </div>
 </div>

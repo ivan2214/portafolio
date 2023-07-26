@@ -35,20 +35,18 @@ const projects = [
   {
     empresa: 'Airbnb Clone',
     puesto: 'Full Stack Developer',
-    subtitle: 'Desde 03/23 hasta 04/23 en Remoto',
     descripcion: [
-      'Registro de usuarios: Los usuarios pueden crear una cuenta para acceder a todas las funciones y servicios de la plataforma.',
-      'Búsqueda de alojamientos: Permite a los usuarios buscar alojamientos según la ubicación, fechas, número de huéspedes y otros filtros relevantes.',
-      'Visualización de listados: Muestra los resultados de búsqueda con detalles de los alojamientos, incluyendo imágenes, descripciones, precios y calificaciones.',
-      'Reservas y solicitud de reserva: Los usuarios pueden realizar reservas de alojamientos seleccionados enviando una solicitud al anfitrión.',
-      'Calendario de disponibilidad: Permite a los anfitriones gestionar las fechas de disponibilidad de sus alojamientos y bloquear períodos no disponibles.',
-      'Interfaz intuitiva y atractiva: Diseñé una interfaz amigable y atractiva para mejorar la experiencia de los usuarios al navegar por la plataforma.',
+      'Registro de usuarios',
+      'Búsqueda de alojamientos',
+      'Visualización de listados',
+      'Reservas y solicitud de reserva',
+      'Calendario de disponibilidad',
+      'Interfaz intuitiva y atractiva',
     ],
   },
   {
     empresa: 'Tech Ecommerce',
     puesto: 'Full Stack Developer',
-    subtitle: 'Desde 02/23 hasta 03/23, Tucuman',
     descripcion: [
       'Desarrollo del Back End utilizando Strapi.',
       'Creación de la interfaz de usuario (UI) en el Front End utilizando TailwindCSS.',
@@ -61,7 +59,6 @@ const projects = [
   {
     empresa: 'Candy Shop',
     puesto: 'Full Stack Developer',
-    subtitle: 'Desde 11/22 hasta 01/23 en Candy Shop, Remoto',
     descripcion: [
       'Desarrollo del Back End utilizando Express y PostgreSQL.',
       'Trabajo en equipo usando SCRUM.',
@@ -80,14 +77,13 @@ const skills = [
   'typescript',
   'javascript',
   'react',
+  'next js',
+  'astro',
   'zustand',
   'redux',
   'redux toolkit',
-  'next js',
-  'astro',
   'css',
   'tailwind',
-  'sass',
   'chakra-iu',
   'node js',
   'express',
@@ -103,7 +99,7 @@ const skills = [
 
 <BaseLayout title='Resume'>
   <div class='mb-5'>
-    <div class='text-3xl w-full font-bold'>Profile</div>
+    <div class='text-3xl w-full font-bold'>Perfil</div>
   </div>
 
   <div class='mb-10 flex flex-col items-start gap-3 text-justify'>
@@ -119,10 +115,9 @@ const skills = [
     </p>
 
     <p class='leading-8 font-light'>
-      Además, me encuentro actualmente en proceso de aprendizaje del inglés para poder crecer aún
-      más como desarrollador. Si está buscando un desarrollador Full Stack con habilidades sólidas
-      en diversas tecnologías, comprometido con el trabajo en equipo y la mejora continua, estoy
-      seguro de que sería una excelente incorporación a su equipo.
+      Si está buscando un desarrollador Front End con habilidades sólidas, comprometido con el
+      trabajo en equipo y la mejora continua, estoy seguro de que sería una excelente incorporación
+      a su equipo.
     </p>
   </div>
 
@@ -148,7 +143,6 @@ const skills = [
         <CardExperience
           empresa={project?.empresa}
           puesto={project?.puesto}
-          subtitle={project?.subtitle}
           descripcion={project?.descripcion}
         />
       ))
@@ -160,7 +154,7 @@ const skills = [
   </div>
 
   <ul class='list-disc mx-6 mb-10 grid gap-2'>
-    <li class="badge badge-lg py-5">
+    <li class='badge badge-lg py-5'>
       <a
         href='https://certificates.soyhenry.com/cert?id=a2226156-bb27-4ecf-9b39-5630c09d47c0'
         target='_blank'
