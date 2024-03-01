@@ -1,6 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components'
-
 type Props = {
   alt: string
   src: any
@@ -9,12 +7,11 @@ type Props = {
 const { clases, src, alt } = Astro.props
 ---
 
-<Image
+<img
   class={`w-6 h-6 ${clases}`}
   src={src}
   alt={alt}
-  aspectRatio='16:16'
   width={750}
-  format='webp'
+  loading="lazy"
   class='max-w-[2.5rem] object-cover'
 />

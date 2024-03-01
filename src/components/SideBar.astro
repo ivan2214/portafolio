@@ -1,5 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components'
 import GitHubIcon from './GitHubIcon.astro'
 import TwitterIcon from './TwitterIcon.astro'
 import LinkedinIcon from './LinkedinIcon.astro'
@@ -16,11 +15,10 @@ import LinkedinIcon from './LinkedinIcon.astro'
           class='avatar transition ease-in-out w-1/2 hover:scale-[102%] block m-auto mt-3 mb-6 h-36'
         >
           <div>
-            <Image
+            <img
               class='mask mask-circle'
-              aspectRatio='1:1'
-              format='webp'
               width={300}
+              loading="lazy"
               height={300}
               src='/profile.png'
               alt='Profile image'

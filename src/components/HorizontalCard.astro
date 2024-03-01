@@ -1,6 +1,5 @@
 ---
 const { title, img, desc, url, badge, tags, target = '_blank', gitHub } = Astro.props
-import { Image } from '@astrojs/image/components'
 import GitHubIcon from './GitHubIcon.astro'
 import RedIcon from './RedIcon.astro'
 ---
@@ -10,11 +9,9 @@ import RedIcon from './RedIcon.astro'
     <div class='hero-content flex-col md:flex-row'>
       {
         img && (
-          <Image
+          <img
             src={img || 'https://via.placeholder.com/300x300?text='}
-            aspectRatio='16:9'
             width={750}
-            format='webp'
             alt={title}
             class='max-w-full md:max-w-[13rem] object-cover rounded-lg'
           />
